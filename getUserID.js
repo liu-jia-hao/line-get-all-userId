@@ -21,11 +21,10 @@ module.exports = async function getUserID() {
     const json = await res.json()
     allUserId = [...allUserId, ...json.userIds]
     if (!json.next) { // 假如下面沒有了，就結束
-      console.log(allUserId);
       return allUserId
     }
     next = json.next
-    console.log('sleep 1 sec') // 怕被LINE伺服器封鎖所以睡一秒
-    await sleep(1000)
+    console.log('wait') // 怕被LINE伺服器封鎖所以睡一下
+    await sleep(300)
   }
 }
