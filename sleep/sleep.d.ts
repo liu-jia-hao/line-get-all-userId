@@ -1,0 +1,1 @@
+declare function sleep(miliSec: number): void
