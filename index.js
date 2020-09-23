@@ -1,13 +1,20 @@
 console.clear()
-console.log('===============================================================')
+console.log('===========================================================')
 const fetch = require('node-fetch');
+require('dotenv').config()
+const allUserIdArray = []
+// while (1) {
+
+// }
 
 fetch('https://api.line.me/v2/bot/followers/ids', {
   headers:
   {
-    Authorization: 'Bearer NhtaLi5RCgxOPvin2MPclT2e08QbTB/IFY/8XhbvAZteVnLzyf7WmqqG8zi5IbMkSaA6TIOFwmRuZ7ik52BkDdPmFeE0+UNqcgxFSzn3Va6P7c09g3muWhq1mLtD0jLG3K0wCx/aR99Tsfb/cYQl4wdB04t89/1O/w1cDnyilFU='
+    Authorization: `Bearer ${process.env.private_channelAccessToken}`
   }
 })
   .then(res => res.json())
   .then(json => console.log(json))
+  .then(() => { })
   .catch(err => console.log(err))
+// fs.writeFile(filename, data, options, callback)
